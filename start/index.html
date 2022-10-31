@@ -18,9 +18,21 @@
         <hr />
 
         <!-- TODO: Add code to display classes -->
+        
+        <div v-for="(productClass, index) in productClasses" :key="index" class="row">
+            <div class="column">
+                {{ productClass.name}}
+            </div>
+            <div class="column">
+                $ {{ productClass.price.toLocaleString('en-US') }}
+            </div>
+
+        </div>
 
         <img v-bind:src="productImage" v-bind:alt="productImageDescription" :style="productImageStyle" />
+        
     </div>
+    
 
     <script src="./index.js"></script>
     <script>
