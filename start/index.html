@@ -26,7 +26,9 @@
             <div class="column">
                 $ {{ productClass.price.toLocaleString('en-US') }}
             </div>
-
+            <button v-if="productClass.earlybird" class="button">Book early bird!!</button>
+            <button v-else class="button">Book now!</button>
+            <div v-show="productClass.seatsAvailable < 10">Almost sold out!</div>
         </div>
 
         <img v-bind:src="productImage" v-bind:alt="productImageDescription" :style="productImageStyle" />
